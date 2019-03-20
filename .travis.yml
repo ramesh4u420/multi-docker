@@ -13,7 +13,7 @@ after_success:
     - docker build -t ramesh/multi-nginx ./nginx
     - docker build -t ramesh/multi-server ./server
     - docker build -t ramesh/multi-worker ./worker
-
+    #docker login
     -echo "DOCKER_PASSWORD"|docker login -u "$DOCKER_ID" --passwordstdin
 
     - docker push ramesh/multi-client
