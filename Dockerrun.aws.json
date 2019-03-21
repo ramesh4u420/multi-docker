@@ -1,0 +1,42 @@
+{
+	"AwsEBDockerrunVersion":2,
+	"containerDefinitions": [
+		{
+			"name": "client",
+			"image":" ramesh4u20/multi-client",
+			"hostname": "client",
+			"essential": false
+		},
+		{
+			"name": "server",
+                        "image":" ramesh4u20/multi-server",
+                        "hostname": "api",
+                        "essential": false
+		},
+		{
+			"name": "worker",
+                        "image":" ramesh4u20/multi-worker",
+                        "hostname": "worker",
+                        "essential": false
+		},
+		{
+		        "name": "nginx",
+                        "image":" ramesh4u20/multi-nginx",
+                        "hostname": "nginx",
+                        "essential": true,
+			"portMappings": [
+				{
+				 "hostport": 80,
+				 "containerPort":80
+				}
+			],
+			"links": ["client","server"]
+		}
+
+	]
+
+
+
+
+
+}
