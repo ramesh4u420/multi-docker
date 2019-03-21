@@ -6,21 +6,38 @@
       "image": "ramesh4u420/multi-client",
       "hostname": "client",
       "essential": false,
-      "memory": 128
+      "memory": 512,
+      "command": [
+           "tail",
+           "-f",
+           "/bin/bash"
+       ]
     },
     {
       "name": "server",
       "image": "ramesh4u420/multi-server",
       "hostname": "api",
       "essential": false,
-      "memory": 128
+      "memory": 512,
+      "command": [
+           "tail",
+           "-f",
+           "/bin/bash"
+       ]
+
     },
     {
       "name": "worker",
       "image": "ramesh4u420/multi-worker",
       "hostname": "worker",
       "essential": false,
-      "memory": 128
+      "memory": 512,
+      "command": [
+           "tail",
+           "-f",
+           "/bin/bash"
+       ]
+
     },
     {
       "name": "nginx",
@@ -34,7 +51,13 @@
         }
       ],
       "links": ["client", "server"],
-      "memory": 128
+      "memory": 512,
+      "command": [
+           "tail",
+           "-f",
+           "/bin/bash"
+       ]
+
     }
   ]
 }
