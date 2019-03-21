@@ -6,7 +6,7 @@
       "image": "ramesh4u420/multi-client",
       "hostname": "client",
       "essential": false,
-      "memory": 512,
+      "memory": 128,
       "command": [
            "tail",
            "-f",
@@ -18,7 +18,7 @@
       "image": "ramesh4u420/multi-server",
       "hostname": "api",
       "essential": false,
-      "memory": 512,
+      "memory": 128,
       "command": [
            "tail",
            "-f",
@@ -31,7 +31,7 @@
       "image": "ramesh4u420/multi-worker",
       "hostname": "worker",
       "essential": false,
-      "memory": 512,
+      "memory": 128,
       "command": [
            "tail",
            "-f",
@@ -51,7 +51,7 @@
         }
       ],
       "links": ["client", "server"],
-      "memory": 512,
+      "memory": 128,
       "command": [
            "tail",
            "-f",
